@@ -1,13 +1,17 @@
 import { useState } from "react";
 
 const Todo = (props) => {
-  const { todo, onChangeState } = props;
+  const { todo, onChangeState, removeTodo } = props;
   const [state, setState] = useState(todo.state);
 
   function handleChecked(){
     setState(!state)
     onChangeState(todo.id, !state)
   }
+  function onClickRemove(){
+    removeTodo(todo.id)
+  }
+  
 	return (
     <div>
       <input 
@@ -17,6 +21,7 @@ const Todo = (props) => {
         onChange={handleChecked}
       />
       {todo.description}
+      <button onClick={onClickRemove}>x</button>
     </div>
   );
 };

@@ -8,6 +8,7 @@ const List = (props) => {
   let listActives = list.filter(todo => todo.state === false);
   let listCompleteds = list.filter(todo => todo.state === true);
   
+  // filters functions
   function handleAll() {
     setFilteredList(list);
   };
@@ -18,6 +19,7 @@ const List = (props) => {
     setFilteredList(listCompleteds);
   };
 
+  // functions
   function onChangeState(id, state){
     const updateList = list.map(todo => ({
       ...todo,
@@ -25,12 +27,25 @@ const List = (props) => {
     }));
     setList(updateList);
   }
+  function onClickRemoveTodos(){
+    const updateList = list.filter(todo => todo.state === false);
+    setList(updateList);
+  }
+  function removeTodo(id){
+    const updateList = list.filter(todo => todo.id !== id);
+    setList(updateList);
+  }
 
   return(
     <div>
       {filteredList.map((todo) => {
         return(
-          <Todo key={todo.id} todo={todo} onChangeState={onChangeState}/>
+          <Todo 
+            key={todo.id} 
+            todo={todo} 
+            onChangeState={onChangeState}
+            removeTodo={removeTodo}
+          />
         )
       })}
       <div>
@@ -43,7 +58,7 @@ const List = (props) => {
           <input type="radio" id="completed" onChange={handleCompleted} name="filter"/>
           <label for="completed">completed</label>
         </div>
-        clear completed
+        <button onClick={onClickRemoveTodos}>clear completed</button>
       </div>
     </div>
   );
