@@ -20,7 +20,6 @@ const Form = (props) => {
   
 	return(
     <form onSubmit={handleSubmit}>
-      form fucionando
       <input 
         type="checkbox"
         name="state"

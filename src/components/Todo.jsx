@@ -1,9 +1,21 @@
+import { useState } from "react";
+
 const Todo = (props) => {
-  const { name, state } = props;
+  const { todo } = props;
+  const [state, setState] = useState(todo.state);
+
+  function handleChecked(){
+    setState(!state)
+  }
 	return (
     <div>
-      <p>{name}</p>
-      <p>{state}</p>
+      <input 
+        type="checkbox"
+        value={state}
+        checked={state}
+        onChange={handleChecked}
+      />
+      {todo.description}
     </div>
   );
 };

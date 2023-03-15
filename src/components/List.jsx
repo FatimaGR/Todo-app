@@ -1,25 +1,39 @@
+import { useState } from "react";
 import Todo from "./Todo.jsx";
 
 const List = (props) => {
   const { list, setList } = props;
-  const listafiltrada = "lista normal";
-  const filterAll = () => {
-    listafiltrada = "lista normal";
+  const [filteredList, setFilteredList] = useState(list);
+  
+  let listActives = list.filter(todo => todo.state === false);
+  let listCompleteds = list.filter(todo => todo.state === true);
+  
+  function handleAll() {
+    setFilteredList(list);
   };
+  function handleActive() {
+    setFilteredList(listActives);
+  };
+  function handleCompleted() {
+    setFilteredList(listCompleteds);
+  };
+
   return(
     <div>
-      list funcionando
-      <Todo 
-        name={"name"}
-        state={"false"}
-      />
-      <p>{listafiltrada}</p>
+      {filteredList.map((todo) => {
+        return(
+          <Todo key={todo.id} todo={todo}/>
+        )
+      })}
       <div>
-        number of items
+        {listActives.length}
         <div>
-          <input type="checkbox" id="all"/> <label for="all">all</label>
-          <input type="checkbox" id="active"/> <label for="active">active</label>
-          <input type="checkbox" id="completed"/> <label for="completed">completed</label>
+          <input type="radio" id="all" onChange={handleAll} name="filter"/>
+          <label for="all">all</label>
+          <input type="radio" id="active" onChange={handleActive} name="filter"/>
+          <label for="active">active</label>
+          <input type="radio" id="completed" onChange={handleCompleted} name="filter"/>
+          <label for="completed">completed</label>
         </div>
         clear completed
       </div>
