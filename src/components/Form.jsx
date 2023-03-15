@@ -16,6 +16,7 @@ const Form = (props) => {
       state, 
     });
     setDescription("");
+    setState(false);
   };
   
 	return(

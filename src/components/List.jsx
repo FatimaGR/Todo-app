@@ -18,11 +18,19 @@ const List = (props) => {
     setFilteredList(listCompleteds);
   };
 
+  function onChangeState(id, state){
+    const updateList = list.map(todo => ({
+      ...todo,
+      state: todo.id === id ? state : todo.state
+    }));
+    setList(updateList);
+  }
+
   return(
     <div>
       {filteredList.map((todo) => {
         return(
-          <Todo key={todo.id} todo={todo}/>
+          <Todo key={todo.id} todo={todo} onChangeState={onChangeState}/>
         )
       })}
       <div>
