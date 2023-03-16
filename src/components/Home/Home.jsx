@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Form from "../Form/Form.jsx";
 import List from "../List/List.jsx";
+import lightIcon from "../../assets/images/icon-moon.svg";
+import darkIcon from "../../assets/images/icon-sun.svg";
+import darkBackground from "../../assets/images/bg-desktop-dark.jpg";
+import lightBackground from "../../assets/images/bg-desktop-light.jpg";
 import "./Home.css";
 
 const Home = () => {
@@ -32,7 +36,7 @@ const Home = () => {
     },
     {
       id: 5,
-      description: "Complete Todo Aoo on Frontend Mentor",
+      description: "Complete Todo App on Frontend Mentor",
       state: false,
     },
   ]);
@@ -46,18 +50,13 @@ const Home = () => {
     console.log(!darkMode);
   }
 
-  const darkIcon = "src/assets/images/icon-moon.svg";
-  const lightIcon = "src/assets/images/icon-sun.svg";
-  const darkBackground = "src/assets/images/bg-desktop-dark.jpg";
-  const lightBackground = "src/assets/images/bg-desktop-light.jpg";
-
   return(
     <>
       <img className="background" src={darkMode === true ? darkBackground : lightBackground}/>
       <div className={darkMode === true ? "dark-mode app-container" : "light-mode app-container"}>
         <div className="app-elements">
           <div className="title">
-            <h1>TODO</h1>
+            <h1>T O D O</h1>
             <img className="mode-icon" src={darkMode === true ? darkIcon : lightIcon} onClick={onClickMode}/>
           </div>
           <Form darkMode={darkMode} handleCreate={handleCreate}/>

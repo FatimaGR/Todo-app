@@ -1,4 +1,5 @@
 import { useState } from "react";
+import iconDelete from "../../assets/images/icon-cross.svg";
 import "./Todo.css";
 
 const Todo = (props) => {
@@ -27,7 +28,7 @@ const Todo = (props) => {
         </div>
         <p className={state === true ? "completed-title" : "active-title"}>{todo.description}</p>
       </div>
-      <img src="src/assets/imageS/icon-cross.svg" onClick={onClickRemove}/>
+      <img className="delete-btn" src={iconDelete} onClick={onClickRemove}/>
     </li>
   );
 };

@@ -21,7 +21,7 @@ const Form = (props) => {
   };
   
 	return(
-    <form className={darkMode === true ? "form dark-mode" : "form light-mode"} onSubmit={handleSubmit}>
+    <form className={darkMode === true ? "form dark-mode-form" : "form light-mode-form"} onSubmit={handleSubmit}>
       <div className={state === true ? "completed" : "active"}>
         <input 
           className="check"
@@ -38,7 +38,7 @@ const Form = (props) => {
         name="description"
         value={description}
         onChange={e => setDescription(e.target.value)}
-        placeholder="currently typing"
+        placeholder="Currently typing"
       />
     </form>
   );

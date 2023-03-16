@@ -18,36 +18,44 @@
 }
 .active{
   border-radius: 50%;
-  border: solid 1px hsl(234, 11%, 52%);
+  border: solid 1px hsl(233, 14%, 35%);
   height: 20px;
   width: 20px;
 }
 .completed{
-  border-radius: 50%;
-  border: 1px solid transparent;
-  height: 20px;
-  width: 20px;
+  border-radius: 50%; 
+  height: 22px;
+  width: 22px;
   background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) ;
 }
 .check:checked{
   appearance: none;
-  height: 11px;
-  width: 9px;
-  margin: 4.5px;
-  border-radius: 50%;
-  /* background-image: url("../assets/images/icon-check.svg"); */
+  height: 10px;
+  width: 12px;
+  margin: 6px;
+  border-radius: 50%; 
+  background-image: url("../../assets/images/icon-check.svg");
   cursor: pointer;
+}
+.active:hover{
+  border: 1px solid;
+  color: hsl(220, 98%, 61%);
 }
 .data{
   display: flex;
   align-items:center;
   gap: 20px;
 }
+.active-title{
+  cursor: pointer;
+}
 .completed-title{
-  color: hsl(234, 11%, 52%);
+  color: hsl(233, 14%, 35%);
   text-decoration:line-through;
 }
-
+.delete-btn{
+  cursor: pointer;
+}
 /* both mode */
 
 /* light mode */

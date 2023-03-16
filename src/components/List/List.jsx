@@ -41,7 +41,7 @@ const List = (props) => {
   darkMode === true ? filterStyle = "dark-filter " : filterStyle = "light-filter"
 
   return(
-    <div className={darkMode === true ? "container dark-mode" : "container light-mode"}>
+    <div className={darkMode === true ? "container dark-mode-list" : "container light-mode-list"}>
       {filteredList.map((todo) => {
         return(
           <Todo 
@@ -49,6 +49,7 @@ const List = (props) => {
             todo={todo} 
             onChangeState={onChangeState}
             removeTodo={removeTodo}
+            darkMode={darkMode}
           />
         )
       })}
@@ -65,7 +66,7 @@ const List = (props) => {
             <input className="radio-btn" type="radio" id="completed" onChange={handleCompleted} name="filter"/>
           </label>
         </div>
-        <button onClick={onClickRemoveTodos}>clear completed</button>
+        <button className={darkMode === true ? "clear-btn-dark": "clear-btn-light"} onClick={onClickRemoveTodos}>Clear Completed</button>
       </div>
     </div>
   );
