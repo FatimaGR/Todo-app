@@ -1,10 +1,11 @@
 import { useState } from "react";
-import Todo from "./Todo.jsx";
+import Todo from "../Todo/Todo.jsx";
+import "./List.css";
 
 const List = (props) => {
-  const { list, setList } = props;
+  const { list, setList, darkMode } = props;
   const [filteredList, setFilteredList] = useState(list);
-  
+
   let listActives = list.filter(todo => todo.state === false);
   let listCompleteds = list.filter(todo => todo.state === true);
   
@@ -35,9 +36,12 @@ const List = (props) => {
     const updateList = list.filter(todo => todo.id !== id);
     setList(updateList);
   }
+  
+  let filterStyle = "";
+  darkMode === true ? filterStyle = "dark-filter " : filterStyle = "light-filter"
 
   return(
-    <div>
+    <div className={darkMode === true ? "container dark-mode" : "container light-mode"}>
       {filteredList.map((todo) => {
         return(
           <Todo 
@@ -48,15 +52,18 @@ const List = (props) => {
           />
         )
       })}
-      <div>
-        {listActives.length}
-        <div>
-          <input type="radio" id="all" onChange={handleAll} name="filter"/>
-          <label for="all">all</label>
-          <input type="radio" id="active" onChange={handleActive} name="filter"/>
-          <label for="active">active</label>
-          <input type="radio" id="completed" onChange={handleCompleted} name="filter"/>
-          <label for="completed">completed</label>
+      <div className="menu">
+        {listActives.length} items left
+        <div className="filters">
+          <label className={filterStyle} for="all">All
+            <input className="radio-btn" type="radio" id="all" onChange={handleAll} name="filter" />
+          </label>
+          <label className={filterStyle} for="active">Active
+            <input className="radio-btn" type="radio" id="active" onChange={handleActive} name="filter"/>
+          </label>
+          <label className={filterStyle} for="completed">Completed
+            <input className="radio-btn" type="radio" id="completed" onChange={handleCompleted} name="filter"/>
+          </label>
         </div>
         <button onClick={onClickRemoveTodos}>clear completed</button>
       </div>

@@ -1,0 +1,48 @@
+/* general */
+*{
+  font-family: 'Josefin Sans';
+  font-size: 18px;
+  font-weight: 400;
+}
+.background{
+  max-width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.mode-icon{
+  object-fit: contain;
+  cursor: pointer;
+}
+.app-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+.app-elements{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 550px; 
+  position: absolute;
+  z-index: 2;
+  margin: auto;
+}
+.title{
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* both mode */
+
+/* light mode */
+.light-mode{
+  background-color: hsl(0, 0%, 98%);
+}
+
+/* dark mode */
+.dark-mode{
+  background-color: hsl(235, 21%, 11%);
+}

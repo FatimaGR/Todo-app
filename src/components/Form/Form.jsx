@@ -1,7 +1,8 @@
 import { useState } from "react";
+import "./Form.css";
 
 const Form = (props) => {
-  const { handleCreate } = props;
+  const { handleCreate, darkMode } = props;
   const [description, setDescription] = useState("");
   const [state, setState] = useState(false);
 
@@ -20,15 +21,19 @@ const Form = (props) => {
   };
   
 	return(
-    <form onSubmit={handleSubmit}>
-      <input 
-        type="checkbox"
-        name="state"
-        value={state}
-        checked={state}
-        onChange={handleChecked}
-      />
-      <input 
+    <form className={darkMode === true ? "form dark-mode" : "form light-mode"} onSubmit={handleSubmit}>
+      <div className={state === true ? "completed" : "active"}>
+        <input 
+          className="check"
+          type="checkbox"
+          name="state"
+          value={state}
+          checked={state}
+          onChange={handleChecked}
+        />
+      </div>
+      <input
+        className={darkMode === true ? "dark-input" : "light-input"}
         type="text"
         name="description"
         value={description}
