@@ -11,8 +11,6 @@
   align-items: center;
   height: 35px;
   font-weight: 400;
-  font-size: 14px; 
-  padding: 2.5px 20px;
   color: hsl(234, 11%, 52%);
 }
 .filters{
@@ -26,8 +24,31 @@
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 14px;
   color: hsl(234, 11%, 52%);
+  padding: 0px;
+}
+@media screen and (min-width: 500px){
+  .menu{
+    padding: 2.5px 20px;
+  }
+  .menu, .clear-btn-light, .clear-btn-dark{
+    font-size: 14px;
+  }
+  .light-filter, .dark-filter{
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 499px){
+  .menu{
+    gap: 10px;
+    padding: 2.5px 15px;
+  }
+  .menu, .clear-btn-light, .clear-btn-dark{
+    font-size: 11px;
+  }
+  .light-filter, .dark-filter{
+    font-size: 12px;
+  }
 }
 
 /* both mode */
@@ -35,7 +56,6 @@
   cursor: pointer;
   color: hsl(234, 11%, 52%);
   font-weight: 600;
-  font-size: 15px;
 }
 .active{
   color: hsl(220, 98%, 61%);

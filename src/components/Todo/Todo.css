@@ -1,11 +1,9 @@
 /* general */
 .todo-container{
-  height: 40px;
   border-bottom: 0.2px solid hsl(237, 14%, 26%);
   display: flex;
   align-items: center;
   object-fit: contain;
-  padding: 10px 20px;
   justify-content: space-between;
 }
 .check{
@@ -56,6 +54,25 @@
 .delete-btn{
   cursor: pointer;
 }
+@media screen and (min-width: 500px){
+  .todo-container{
+    height: 40px;
+    padding: 10px 20px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 499px){
+  .todo-container{
+    height: 25px;
+    padding: 15px 15px;
+  }
+  .active-title, .completed-title{
+    font-size: 14px;
+  }
+  .delete-btn{
+    height: 12px;
+  }
+}
+
 /* both mode */
 
 /* light mode */

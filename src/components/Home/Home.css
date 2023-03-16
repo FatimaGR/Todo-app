@@ -8,10 +8,23 @@
   width: 100%;
   position: absolute;
   z-index: 1;
+  object-fit: cover;
 }
 .mode-icon{
   object-fit: contain;
   cursor: pointer;
+}
+.title{
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-elements{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
 }
 .app-container{
   display: flex;
@@ -19,19 +32,36 @@
   align-items: center;
   min-height: 100vh;
 }
-.app-elements{
-  display: flex;
-  flex-direction: column;
-  width: 550px;
-  min-width: 375px;
-  position: absolute;
-  z-index: 2;
-  margin: 65px auto ;
+@media screen and (min-width: 500px){
+  .background{
+    height: 271px;
+    object-fit: cover;
+  }
+  .app-elements{
+    max-width: 550px;
+    min-width: 375px;
+    margin: 65px auto ;
+  }
+  h1{
+    font-size: 40px;
+  }
 }
-.title{
-  min-width: 100%;
-  display: flex;
-  justify-content: space-between;
+@media screen and (min-width: 375px) and (max-width: 499px){
+  .app-elements{
+    padding: 30px;
+    object-fit: contain;
+    margin: 9px auto;
+  }
+  .background{
+    height: 180px;
+    object-fit: cover;
+  }
+  h1{
+    font-size: 25px;
+  }
+  .mode-icon{
+    height: 20px;
+  }
 }
 
 /* both mode */

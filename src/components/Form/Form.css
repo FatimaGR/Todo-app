@@ -1,8 +1,6 @@
 /* general */
 .form{
   border-radius: 5px;
-  height: 45px;
-  padding: 10px 20px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -37,6 +35,25 @@
   border-radius: 50%;
   background-image: url("../../assets/images/icon-check.svg");
   cursor: pointer;
+}
+@media screen and (min-width: 500px){
+  .form{
+    height: 45px;
+    padding: 10px 20px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 499px){
+  .form{
+    height: 25px;
+    padding: 15px 15px;
+    font-size: 14px;
+  }
+  .light-input,
+  .dark-input,
+  .dark-input::placeholder,
+  .light-input::placeholder{
+    font-size: 14px;
+  }
 }
 
 /* both mode */
