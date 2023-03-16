@@ -28,7 +28,7 @@ const Todo = (props) => {
         </div>
         <p className={state === true ? "completed-title" : "active-title"}>{todo.description}</p>
       </div>
-      <img className="delete-btn" src={iconDelete} onClick={onClickRemove}/>
+      <img className="delete-btn" src={iconDelete} alt="delete button" onClick={onClickRemove}/>
     </li>
   );
 };
