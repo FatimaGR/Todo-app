@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [-](https://your-solution-url.com)
-- Live Site URL: [-](https://your-live-site-url.com)
+- Solution URL: [Todo App Solution using React](https://www.frontendmentor.io/solutions/todo-app-using-react-eJir3CP-Ez)
+- Live Site URL: [https://todo-app-indol-chi.vercel.app](https://todo-app-indol-chi.vercel.app)
 
 
 ## My process
