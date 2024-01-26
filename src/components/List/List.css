@@ -38,7 +38,7 @@
     font-size: 15px;
   }
 }
-@media screen and (min-width: 375px) and (max-width: 499px){
+@media screen and (max-width: 499px){
   .menu{
     gap: 10px;
     padding: 2.5px 15px;

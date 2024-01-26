@@ -46,9 +46,10 @@
     font-size: 40px;
   }
 }
-@media screen and (min-width: 375px) and (max-width: 499px){
+
+@media screen and (max-width: 499px){
   .app-elements{
-    padding: 30px;
+    padding: 5%;
     object-fit: contain;
     margin: 9px auto;
   }
